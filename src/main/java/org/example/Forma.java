@@ -5,6 +5,6 @@ public abstract class Forma {
 
     @Override
     public String toString() {
-        return "Forma: " + Area();
+        return Forma.class.getName();
     }
 }
