@@ -1,7 +1,7 @@
 package org.example;
 
 public class Triangolo extends Forma {
-    private double Base;
+    public double Base;
     private double Altezza;
     public Triangolo(double Base, double Altezza) {
         this.Base = Base;

@@ -1,10 +1,12 @@
 package org.example;
 
 public abstract class Forma {
+    public String Base;
+
     public abstract double Area();
 
     @Override
     public String toString() {
-        return Forma.class.getName();
+        return this.getClass().getSimpleName() + ": " + Area();
     }
 }

@@ -1,17 +1,24 @@
-package org.example;
+import org.example.Cerchio;
+import org.example.Forma;
+import org.example.Rettangolo;
+import org.example.Triangolo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import static java.lang.IO.println;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+void main() {
+    Forma[] forme = {new Cerchio(2), new Rettangolo(3, 4), new Triangolo(6, 5)};
+
+    double totale = 0;
+    Forma max = forme[0];
+    for(Forma f : forme){
+        println(f);
+        totale += f.Area();
+        if(f.Area() > max.Area()){
+            max = f;
         }
+    }
+    println("Area totale = " + Math.round(totale * 100) / 100.0);
+    if(max instanceof Triangolo t) {
+        println("La più grande è un triangolo di base " + t.Base);
     }
 }

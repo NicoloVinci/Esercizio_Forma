@@ -9,6 +9,6 @@ public class Cerchio extends Forma {
     }
     @Override
     public double Area() {
-        return Math.PI * Raggio * Raggio;
+        return Math.round(Math.PI * Raggio * Raggio);
     }
 }
